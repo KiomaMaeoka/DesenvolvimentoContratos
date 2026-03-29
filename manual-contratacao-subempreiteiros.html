@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Contratação - Maeoka Engenharia</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            color: #1a1a1a;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* CABECALHO */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .header .subtitulo {
+            font-size: 1rem;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        .header .empresa {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* AVISO IMPORTANTE */
+        .aviso-box {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px 25px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 30px;
+        }
+
+        .aviso-box h3 {
+            color: #856404;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .aviso-box p {
+            color: #664d03;
+            font-size: 0.9rem;
+        }
+
+        /* SECOES */
+        .secao {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .secao-numero {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: #1a1a2e;
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .secao h2 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+            letter-spacing: -0.3px;
+        }
+
+        .secao p {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .secao ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .secao ul li {
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .secao ul li strong {
+            color: #1a1a2e;
+        }
+
+        /* DESTAQUE */
+        .destaque {
+            background: #e8f4fd;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-left: 4px solid #2196F3;
+        }
+
+        .destaque p {
+            color: #0d47a1;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* ALERTA VERMELHO */
+        .alerta {
+            background: #fde8e8;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-left: 4px solid #e53935;
+        }
+
+        .alerta p {
+            color: #b71c1c;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* TABELA DE PAGAMENTO */
+        .tabela-pagamento {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tabela-pagamento th {
+            background: #1a1a2e;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .tabela-pagamento td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .tabela-pagamento tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* FLUXO VISUAL */
+        .fluxo {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 20px 0;
+        }
+
+        .fluxo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .fluxo-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .fluxo-item::before {
+            content: '';
+            position: absolute;
+            left: 17px;
+            top: 36px;
+            bottom: 0;
+            width: 2px;
+            background: #ddd;
+        }
+
+        .fluxo-item:last-child::before {
+            display: none;
+        }
+
+        .fluxo-num {
+            min-width: 36px;
+            height: 36px;
+            background: #1a1a2e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            z-index: 1;
+        }
+
+        .fluxo-texto {
+            flex: 1;
+            padding-top: 6px;
+        }
+
+        .fluxo-texto strong {
+            display: block;
+            color: #1a1a2e;
+            margin-bottom: 3px;
+        }
+
+        .fluxo-texto span {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* RODAPE */
+        .rodape {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 0.8rem;
+        }
+
+        .rodape strong {
+            color: #1a1a2e;
+        }
+
+        /* SEPARADOR */
+        .separador {
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+
+        /* ASSINATURA */
+        .assinatura-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        .assinatura-linha {
+            text-align: center;
+        }
+
+        .assinatura-linha .linha {
+            border-top: 1px solid #333;
+            margin-bottom: 8px;
+            margin-top: 60px;
+        }
+
+        .assinatura-linha p {
+            font-size: 0.85rem;
+            color: #555;
+            margin: 2px 0;
+        }
+
+        @media print {
+            body { background: white; }
+            .container { padding: 0; max-width: 100%; }
+            .secao { box-shadow: none; border: 1px solid #eee; break-inside: avoid; }
+            .header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+
+        @media (max-width: 600px) {
+            .header h1 { font-size: 1.4rem; }
+            .secao { padding: 20px; }
+            .assinatura-area { grid-template-columns: 1fr; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- CABECALHO -->
+        <div class="header">
+            <h1>MANUAL DE CONTRATACAO</h1>
+            <div class="subtitulo">Como funciona trabalhar com a Maeoka Engenharia</div>
+            <div class="empresa">
+                Maeoka Engenharia &bull; CNPJ 19.924.627/0001-67<br>
+                Eng. Kioma Maeoka &bull; CREA-PR 159.328/D-PR
+            </div>
+        </div>
+
+        <!-- AVISO -->
+        <div class="aviso-box">
+            <h3>LEIA COM ATENCAO</h3>
+            <p>Este manual explica como funciona a contratacao de servicos pela Maeoka Engenharia. Todo profissional contratado deve ler, entender e assinar este documento antes de iniciar qualquer servico. Em caso de duvida, pergunte antes de assinar.</p>
+        </div>
+
+        <!-- SECAO 1 - COMO FUNCIONA A CONTRATACAO -->
+        <div class="secao">
+            <div class="secao-numero">1</div>
+            <h2>COMO FUNCIONA A CONTRATACAO</h2>
+
+            <p>A Maeoka Engenharia contrata profissionais exclusivamente como <strong>prestadores de servico atraves de MEI (Microempreendedor Individual)</strong> ou empresa propria.</p>
+
+            <p>Isso significa que:</p>
+            <ul>
+                <li><strong>Nao existe vinculo empregaticio</strong> entre voce e a Maeoka Engenharia. Voce e um prestador de servico independente.</li>
+                <li>Voce precisa ter <strong>CNPJ ativo (MEI ou ME)</strong>. Todos os pagamentos sao feitos exclusivamente na conta bancaria vinculada ao seu CNPJ — <strong>nao fazemos pagamento em conta de pessoa fisica</strong>.</li>
+                <li>A Maeoka Engenharia <strong>nao desconta INSS, FGTS, ferias ou 13o</strong> — essas obrigacoes sao suas como MEI.</li>
+                <li>Voce e responsavel pelos seus <strong>proprios EPIs (Equipamentos de Protecao Individual)</strong> e pelos EPIs dos seus ajudantes.</li>
+                <li>Se voce trouxer ajudantes, a responsabilidade trabalhista sobre eles e <strong>exclusivamente sua</strong>.</li>
+            </ul>
+
+            <div class="destaque">
+                <p><strong>Importante:</strong> Antes de comecar qualquer obra, sera assinado um contrato de prestacao de servicos detalhando escopo, valores, prazos e condicoes. Nada comeca sem contrato.</p>
+            </div>
+        </div>
+
+        <!-- SECAO 2 - ESCOPO DO SERVICO -->
+        <div class="secao">
+            <div class="secao-numero">2</div>
+            <h2>ESCOPO DO SERVICO</h2>
+
+            <p>Antes de cada obra, voce recebera um <strong>descritivo detalhado</strong> dos servicos a serem executados, incluindo:</p>
+
+            <ul>
+                <li>O que deve ser feito (demolir, construir, revestir, pintar etc.)</li>
+                <li>Quantidades e medidas (m2, metros lineares, unidades)</li>
+                <li>Especificacoes tecnicas (tipo de argamassa, espessura, nivel, prumo)</li>
+                <li>Prazo para conclusao de cada etapa</li>
+                <li>Valor combinado por etapa ou medicao</li>
+            </ul>
+
+            <div class="alerta">
+                <p><strong>Regra:</strong> Qualquer servico que nao esteja no escopo combinado so pode ser executado com autorizacao previa e por escrito do Eng. Kioma. Servico feito sem autorizacao nao sera pago.</p>
+            </div>
+        </div>
+
+        <!-- SECAO 3 - INSPECAO E APROVACAO -->
+        <div class="secao">
+            <div class="secao-numero">3</div>
+            <h2>COMO FUNCIONA A INSPECAO</h2>
+
+            <p>Todo servico executado passa por <strong>duas etapas de aprovacao</strong> antes do pagamento:</p>
+
+            <div class="fluxo">
+                <div class="fluxo-item">
+                    <div class="fluxo-num">1</div>
+                    <div class="fluxo-texto">
+                        <strong>Voce conclui a etapa</strong>
+                        <span>Comunica ao Eng. Kioma que o servico esta pronto para inspecao.</span>
+                    </div>
+                </div>
+                <div class="fluxo-item">
+                    <div class="fluxo-num">2</div>
+                    <div class="fluxo-texto">
+                        <strong>Inspecao Tecnica (Eng. Kioma)</strong>
+                        <span>O engenheiro vistoria o servico verificando qualidade, nivel, prumo, acabamento e conformidade com o que foi combinado. Prazo: ate 5 dias uteis.</span>
+                    </div>
+                </div>
+                <div class="fluxo-item">
+                    <div class="fluxo-num">3</div>
+                    <div class="fluxo-texto">
+                        <strong>Aprovacao do Cliente</strong>
+                        <span>Apos a aprovacao tecnica, o cliente final vistoria o servico. O pagamento so e liberado apos a aprovacao do cliente.</span>
+                    </div>
+                </div>
+                <div class="fluxo-item">
+                    <div class="fluxo-num">4</div>
+                    <div class="fluxo-texto">
+                        <strong>Liberacao do Pagamento</strong>
+                        <span>Com as duas aprovacoes concluidas, o pagamento da etapa e liberado conforme as condicoes do contrato.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alerta">
+                <p><strong>Atencao:</strong> Nenhum pagamento sera feito antes da dupla aprovacao (engenheiro + cliente). Isso nao e negociavel.</p>
+            </div>
+        </div>
+
+        <!-- SECAO 4 - SE O SERVICO FOR REPROVADO -->
+        <div class="secao">
+            <div class="secao-numero">4</div>
+            <h2>SE O SERVICO FOR REPROVADO</h2>
+
+            <p>Se na inspecao o servico <strong>nao estiver de acordo</strong> com o que foi combinado (torto, fora de nivel, mal acabado, material danificado etc.), voce tem as seguintes obrigacoes:</p>
+
+            <ul>
+                <li><strong>Corrigir o servico em ate 48 horas</strong> apos a notificacao, sem custo adicional para a Maeoka ou o cliente.</li>
+                <li><strong>Arcar com o material</strong> que for danificado ou desperdicado por erro de execucao. Isso inclui ceramica quebrada, massa desperdicada, pecas danificadas etc.</li>
+                <li><strong>Arcar com a mao de obra</strong> necessaria para refazer o servico. Nao ha pagamento extra por retrabalho.</li>
+            </ul>
+
+            <div class="alerta">
+                <p><strong>Se a correcao nao for feita em 48 horas:</strong> A Maeoka se reserva o direito de substituir o profissional imediatamente. Nesse caso, um novo profissional sera contratado para corrigir o servico, e o custo dessa correcao (material + mao de obra) sera <strong>integralmente descontado dos valores devidos ao profissional original</strong>.</p>
+            </div>
+
+            <p>Resumindo:</p>
+
+            <table class="tabela-pagamento">
+                <thead>
+                    <tr>
+                        <th>Situacao</th>
+                        <th>O que acontece</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Servico aprovado na inspecao</td>
+                        <td>Pagamento liberado normalmente</td>
+                    </tr>
+                    <tr>
+                        <td>Servico reprovado, corrigido em ate 48h</td>
+                        <td>Nova inspecao. Se aprovado, pagamento liberado</td>
+                    </tr>
+                    <tr>
+                        <td>Servico reprovado, NAO corrigido em 48h</td>
+                        <td>Troca de profissional. Custo da correcao descontado do seu pagamento</td>
+                    </tr>
+                    <tr>
+                        <td>Material danificado por erro de execucao</td>
+                        <td>Profissional arca com a reposicao do material</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECAO 5 - RETENCAO TECNICA -->
+        <div class="secao">
+            <div class="secao-numero">5</div>
+            <h2>RETENCAO TECNICA</h2>
+
+            <p>Em todos os contratos, a Maeoka Engenharia retem <strong>5% (cinco por cento) do valor total de cada medicao</strong> como garantia tecnica.</p>
+
+            <p>Como funciona:</p>
+            <ul>
+                <li>A cada medicao/pagamento, 5% ficam retidos.</li>
+                <li>Esse valor so e liberado <strong>apos a conclusao total da obra</strong> e a vistoria final aprovada pelo engenheiro e pelo cliente.</li>
+                <li>Se houver pendencias ou defeitos no final da obra, o valor retido pode ser usado para cobrir reparos.</li>
+            </ul>
+
+            <div class="destaque">
+                <p><strong>Exemplo:</strong> Se o valor total do contrato e R$ 10.000, a cada pagamento 5% fica retido. No final da obra, com tudo aprovado, voce recebe os R$ 500 retidos.</p>
+            </div>
+        </div>
+
+        <!-- SECAO 6 - PAGAMENTOS -->
+        <div class="secao">
+            <div class="secao-numero">6</div>
+            <h2>COMO FUNCIONAM OS PAGAMENTOS</h2>
+
+            <p>Os pagamentos sao feitos <strong>por medicao quinzenal</strong>, vinculados a conclusao e aprovacao de cada etapa. A Maeoka trabalha com dois modelos de pagamento, dependendo do porte do servico:</p>
+
+            <h3 style="font-size: 1rem; color: #1a1a2e; margin: 20px 0 10px;">Servicos pequenos (ate 30 dias)</h3>
+            <table class="tabela-pagamento">
+                <thead>
+                    <tr>
+                        <th>Etapa</th>
+                        <th>Percentual</th>
+                        <th>Condicao</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mobilizacao (inicio)</td>
+                        <td>15%</td>
+                        <td>Apos inicio dos servicos no canteiro</td>
+                    </tr>
+                    <tr>
+                        <td>Metade da execucao</td>
+                        <td>40%</td>
+                        <td>Apos medicao aprovada na metade do servico</td>
+                    </tr>
+                    <tr>
+                        <td>Conclusao</td>
+                        <td>40%</td>
+                        <td>Apos conclusao total e vistoria final aprovada</td>
+                    </tr>
+                    <tr>
+                        <td>Retencao tecnica</td>
+                        <td>5%</td>
+                        <td>Liberado apos entrega final aprovada e periodo de garantia inicial</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="font-size: 1rem; color: #1a1a2e; margin: 20px 0 10px;">Servicos maiores (acima de 30 dias)</h3>
+            <p>Para obras de maior duracao, os pagamentos seguem <strong>medicoes quinzenais</strong> baseadas no avanco fisico medido em campo, com retencao de 5% em cada medicao. Os valores e cronograma serao detalhados no contrato especifico de cada obra.</p>
+
+            <p><strong>Regras importantes sobre pagamento:</strong></p>
+            <ul>
+                <li>Pagamento <strong>somente via transferencia bancaria ou PIX na conta CNPJ</strong> do prestador. Nao fazemos pagamento em conta de pessoa fisica.</li>
+                <li><strong>Nao ha adiantamento superior a 40%</strong> de nenhuma etapa.</li>
+                <li>A retencao tecnica de 5% e descontada de cada medicao e so e liberada no final.</li>
+                <li>Pagamento <strong>so apos dupla aprovacao</strong> (engenheiro + cliente).</li>
+                <li><strong>Material danificado ou desperdicado</strong> por erro de execucao sera descontado diretamente do pagamento da medicao correspondente.</li>
+            </ul>
+        </div>
+
+        <!-- SECAO 7 - MATERIAIS -->
+        <div class="secao">
+            <div class="secao-numero">7</div>
+            <h2>MATERIAIS</h2>
+
+            <p>Na maioria dos casos, os materiais sao adquiridos pelo cliente com apoio logistico da Maeoka. O profissional contratado deve ter <strong>cuidado total no manuseio</strong> dos materiais. Regras:</p>
+
+            <ul>
+                <li>Voce e responsavel pelo <strong>uso correto e economico</strong> dos materiais.</li>
+                <li>Material que <strong>quebrar ou danificar durante a execucao</strong> (ceramica cortada errada, peca furada no lugar errado, tubulacao danificada, massa desperdicada etc.) e responsabilidade do profissional contratado e <strong>sera descontado diretamente do seu pagamento</strong>.</li>
+                <li><strong>Desperdicio excessivo</strong> por mau uso tambem sera descontado.</li>
+                <li>Sobras de materiais devem ser <strong>organizadas e devolvidas</strong> ao cliente ou ao deposito da obra.</li>
+            </ul>
+
+            <div class="alerta">
+                <p><strong>Atencao:</strong> Tome cuidado com o manuseio dos materiais. Qualquer dano por negligencia ou erro de execucao sera descontado do seu pagamento. Isso inclui ceramicas, pecas hidraulicas, pecas eletricas, revestimentos, vidros e qualquer outro material fornecido para a obra.</p>
+            </div>
+        </div>
+
+        <!-- SECAO 8 - OBRIGACOES DO PROFISSIONAL -->
+        <div class="secao">
+            <div class="secao-numero">8</div>
+            <h2>SUAS OBRIGACOES</h2>
+
+            <ul>
+                <li><strong>CNPJ ativo</strong> (MEI ou ME) — obrigatorio. Sem CNPJ ativo, nao ha contratacao. Pagamento e feito exclusivamente na conta bancaria do CNPJ.</li>
+                <li><strong>EPIs proprios</strong> e dos seus ajudantes (capacete, bota, luva, oculos quando necessario) — responsabilidade total do profissional.</li>
+                <li><strong>Ferramentas proprias</strong> para a execucao dos servicos.</li>
+                <li><strong>Cumprir o prazo</strong> combinado. Atrasos reincidentes sao motivo de rescisao.</li>
+                <li><strong>Manter o local limpo</strong> e organizado ao final de cada dia de trabalho.</li>
+                <li><strong>Seguir as orientacoes tecnicas</strong> do Eng. Kioma. Insubordinacao tecnica (fazer diferente do que foi orientado) e motivo de rescisao imediata.</li>
+                <li><strong>Comunicar problemas</strong> imediatamente. Encontrou algo errado no projeto, na parede, na estrutura? Avise antes de continuar.</li>
+                <li><strong>Nao subcontratar terceiros</strong> sem autorizacao previa e escrita.</li>
+            </ul>
+        </div>
+
+        <!-- SECAO 9 - RESCISAO -->
+        <div class="secao">
+            <div class="secao-numero">9</div>
+            <h2>QUANDO O CONTRATO PODE SER ENCERRADO</h2>
+
+            <p>A Maeoka pode rescindir o contrato imediatamente nos seguintes casos:</p>
+
+            <ul>
+                <li>Insubordinacao tecnica (fazer diferente do que foi orientado pelo engenheiro)</li>
+                <li>Nao corrigir servico reprovado no prazo de 48 horas</li>
+                <li>Reincidencia em servicos com defeito</li>
+                <li>Abandono da obra sem comunicacao</li>
+                <li>Falta de EPIs no canteiro</li>
+                <li>Subcontratacao sem autorizacao</li>
+                <li>Conduta inadequada no local de trabalho</li>
+            </ul>
+
+            <p>Em caso de rescisao por culpa do profissional:</p>
+            <ul>
+                <li>Sera pago apenas o servico <strong>ja executado e aprovado</strong> ate aquele momento.</li>
+                <li>O valor retido (5%) <strong>nao sera devolvido</strong> se houver pendencias ou defeitos.</li>
+                <li>Custos de correcao serao descontados dos valores devidos.</li>
+            </ul>
+        </div>
+
+        <!-- SECAO 10 - GARANTIA -->
+        <div class="secao">
+            <div class="secao-numero">10</div>
+            <h2>GARANTIA DOS SERVICOS</h2>
+
+            <p>O profissional contratado deve <strong>fornecer garantia de 5 (cinco) anos</strong> sobre os servicos executados, conforme o Codigo Civil Brasileiro (Art. 618).</p>
+
+            <p>Isso significa que:</p>
+            <ul>
+                <li>Se aparecer defeito por erro de execucao dentro desse periodo, <strong>voce sera convocado para corrigir sem custo adicional</strong>.</li>
+                <li>A garantia cobre defeitos de mao de obra, nao desgaste natural de uso.</li>
+                <li>A recusa em corrigir defeitos dentro do periodo de garantia pode gerar <strong>responsabilizacao civil</strong> pelos danos causados.</li>
+            </ul>
+
+            <div class="destaque">
+                <p><strong>Ao assinar o contrato, voce esta concordando em fornecer garantia de 5 anos sobre tudo que executar.</strong> Faca o servico bem feito da primeira vez.</p>
+            </div>
+        </div>
+
+        <!-- DECLARACAO -->
+        <div class="secao">
+            <h2>DECLARACAO DE CIENCIA</h2>
+
+            <p>Declaro que li, entendi e concordo com todas as condicoes descritas neste Manual de Contratacao da Maeoka Engenharia. Estou ciente de que este documento complementa o contrato de prestacao de servicos e tem validade juridica.</p>
+
+            <div class="assinatura-area">
+                <div class="assinatura-linha">
+                    <div class="linha"></div>
+                    <p><strong>Profissional / Prestador</strong></p>
+                    <p>Nome: ________________________________</p>
+                    <p>CPF/CNPJ: ____________________________</p>
+                    <p>Data: ____/____/________</p>
+                </div>
+                <div class="assinatura-linha">
+                    <div class="linha"></div>
+                    <p><strong>Maeoka Engenharia</strong></p>
+                    <p>Eng. Kioma Maeoka</p>
+                    <p>CREA-PR 159.328/D-PR</p>
+                    <p>Data: ____/____/________</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RODAPE -->
+        <div class="rodape">
+            <strong>Maeoka Engenharia</strong> &bull; CNPJ 19.924.627/0001-67<br>
+            Documento interno &bull; Versao 1.0 &bull; Marco/2026
+        </div>
+
+    </div>
+</body>
+</html>
